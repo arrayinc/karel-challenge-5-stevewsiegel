@@ -35,83 +35,41 @@ solve the more general case?
 
 import "turns";
 
-function TreeLeaf(){
-move();
-turnLeft();
-move();
-move();
-putBeeper();
-move();
-putBeeper();
-turnRight();
-move();
-putBeeper();
-turnRight();
-move();
-putBeeper();
-move();
-move();
-turnLeft();
-move();
-turnLeft();
-move();
-move();
-move();
-move();
-putBeeper();
-move();
-putBeeper();
-turnRight();
-move();
-putBeeper();
-turnRight();
-move();
-putBeeper();
-move();
-move();
-move();
-move();
-turnLeft();
-move();
-move();
-move();
-turnLeft();
-move();
-move();
-putBeeper();
-move();
-putBeeper();
-turnRight();
-move();
-putBeeper();
-turnRight();
-move();
-putBeeper();
-move();
-move();
-turnLeft();
-move();
-move();
-turnLeft();
-move();
-move();
-move();
-putBeeper();
-move();
-putBeeper();
-turnRight();
-move();
-putBeeper();
-turnRight();
-move();
-putBeeper();
-move();
-move();
-move();
-turnLeft();
-move();
-
-
-
-
+function TreeLeafs(){
+	moving();
+	climb();
+	leafing();
+	climbDown();
 }
+	function moving(){
+		while(frontIsClear()){
+			move();
+		}
+		turnLeft();
+	}
+
+	function climb(){
+		while(rightIsBlocked()){
+			move();
+		}
+	}
+
+	function leafing(){
+		putBeeper();
+		repeat(2){
+			move();
+			putBeeper();
+			turnRight();
+		}
+	 	move();
+	 	putBeeper();
+
+		}
+	function climbDown(){
+
+		while(frontIsClear()){
+		move();
+		}
+		turnLeft();
+	}
+  
